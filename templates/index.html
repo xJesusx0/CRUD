@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{%block set_style %}
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/style_index.css') }}">
+{% endblock %}
+
+{% block header %}
+    <h1>My CRUD app</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <h2>Add a new user</h2>
+        <a href="/Register"><button id="Add">+</button></a>
+    </div>
+    <br><br>
+    {% include "table.html" %}
+{% endblock %}

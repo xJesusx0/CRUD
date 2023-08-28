@@ -1,0 +1,53 @@
+.table{
+    width: 90%;
+}
+div{
+    display: flex;
+    justify-content: center;
+}
+button{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    border-radius: 30px;
+    height: 35px;
+    width: 100px;
+}
+#id{
+    width: 10%;
+}
+#username,#password{
+    width: 20%;
+}
+#actions{
+    width: 40%;
+}
+.button_container{
+    gap: 20px;
+}
+#Delete{
+    box-shadow: 0px 0px 10px #b70101;
+    background-color: #b70101;
+    color: #fff;;
+    border: 2px solid #b70101;
+}
+#Delete:hover{
+    box-shadow: 0px 0px 40px #e00202;
+    background-color: #e00202;
+    color: #000000;;
+    border: 2px solid #e00202;
+}
+#Edit{
+    box-shadow: 0px 0px 10px #df9d01;
+    background-color: #df9d01;
+    color: #fff;;
+    border: 2px solid #df9d01;
+}
+#Edit:hover{
+    box-shadow: 0px 0px 40px #ffb300;
+    background-color: #ffb300;
+    color: #000000;;
+    border: 2px solid #ffb300;
+}
+#odd{
+    background-color: #21193c;
+}

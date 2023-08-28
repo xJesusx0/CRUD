@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block set_style %}
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/style_table.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div>
+        <table class="table">
+            <thead>
+                <td id="id"><div>Id</div></td>
+                <td id="Username"><div>Username</div></td>
+                <td id="password"><div>Password</div></td>
+                <td id="actions"><div>Actions</div></td>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    {% if user.id % 2 == 0 %}
+                    <tr id="even">
+                    {% else %}
+                    <tr id="odd">
+                    {% endif %}
+                        <td><div>{{user.id}}</div></td>
+                        <td><div>{{user.name}}</div></td>
+                        <td><div>{{user.password}}</div></td>
+                        <td>
+                            <div class="button_container">
+                                <form action="/Delete" method="post" >
+                                    <input name="id" type="hidden" value="{{ user.id }}">
+                                    <button type="submit" id="Delete">Delete</button>
+                                </form>
+                                <form action="/Edit" method="post" >
+                                    <input name="id" type="hidden" value="{{ user.id }}">
+                                    <button type="submit" id="Edit">Edit</button>
+                                </form>
+                                
+                            </div>    
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{%  endblock %}
+
+{% block footer %}
+    
+{% endblock %}

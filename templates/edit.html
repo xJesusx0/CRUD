@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block set_style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_edit.css') }}">
+{% endblock %}
+
+{% block header %}
+    <h1>Edit ID: {{data.id}} </h1>
+{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="container" >
+        <form action="/Edit" method="post"> 
+            <legend>Username</legend>    
+            <input name="id" type="hidden" value="{{ data.id }}">
+            <input name ="new_username" type="text" value="{{ data.name }}" placeholder="Username" autocomplete="off" spellcheck="false"><br>
+            <legend>Password</legend>
+            <input name="new_password" type="text" value="{{ data.password }}" placeholder="Password" autocomplete="off" spellcheck="false"><br>
+            <button id="Edit" type="submit">Save</button>     
+        </form><br>
+        <a href="/"><button id="Cancel">Cancel</button></a>
+    </div>
+{% endblock %}

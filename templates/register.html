@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block set_style %}
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/style_register.css')}}">
+{% endblock %}
+
+{% block header %}
+    <h1>Add a new user</h1>
+{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <form action="/Register" method="post">
+            <legend>Username</legend>
+            <input name ="username" type="text" placeholder="Username" autocomplete="off" spellcheck="false"><br>
+            <legend>Password</legend>
+            <input name="password" type="text" placeholder="Password" autocomplete="off" spellcheck="false"><br>
+            <button id="Register" type="submit">Register</button><br>      
+        </form>
+        <a href="/"><button id="Cancel">Cancel</button></a>           
+    </div>
+{% endblock %}
