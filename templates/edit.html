@@ -5,15 +5,16 @@
 {% endblock %}
 
 {% block header %}
-    <h1>Edit ID: {{data.id}} </h1>
+    <h1>Edit this user </h1>
 {% endblock %}
 
 {% block body %}
     <br>
     <div class="container" >
         <form action="/Edit" method="post"> 
+            <legend>Id</legend>    
+            <input name="id" type="number" value="{{ data.id }}" disabled><br>
             <legend>Username</legend>    
-            <input name="id" type="hidden" value="{{ data.id }}">
             <input name ="new_username" type="text" value="{{ data.name }}" placeholder="Username" autocomplete="off" spellcheck="false"><br>
             <legend>Password</legend>
             <input name="new_password" type="text" value="{{ data.password }}" placeholder="Password" autocomplete="off" spellcheck="false"><br>

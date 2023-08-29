@@ -9,20 +9,25 @@ app = flask.Flask(__name__)
 
 @app.route("/")
 def index():
-    return flask.render_template("index.html", users = f.Get_data())
+    users = f.Get_data() 
+    indexes = f.Get_index()
+    return flask.render_template("index.html", data = zip(users,indexes))
 
 @app.route("/Table")
 def Table():
-    return flask.render_template("table.html", users = f.Get_data())
+    users = f.Get_data() 
+    indexes = f.Get_index()
+    return flask.render_template("table.html", data = zip(users,indexes))
 
 
 @app.route("/Register", methods = ["GET","POST"])
 def register():
+    id       = 1
     username = flask.request.form.get("username")
     password = flask.request.form.get("password") 
     
-    if f.Valid_username(username) and f.Valid_password(password):
-        f.Register(username,password)
+    if f.Valid_id(id) and f.Valid_username(username) and f.Valid_password(password):
+        f.Register(id,username,password)
         return flask.redirect("/")
     
     return flask.render_template("register.html")

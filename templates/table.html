@@ -14,23 +14,23 @@
                 <td id="actions"><div>Actions</div></td>
             </thead>
             <tbody>
-                {% for user in users %}
-                    {% if user.id % 2 == 0 %}
+                {% for user in data %}
+                    {% if user[1] % 2 == 0 %}
                     <tr id="even">
                     {% else %}
                     <tr id="odd">
                     {% endif %}
-                        <td><div>{{user.id}}</div></td>
-                        <td><div>{{user.name}}</div></td>
-                        <td><div>{{user.password}}</div></td>
+                        <td><div>{{user[0].id}}</div></td>
+                        <td><div>{{user[0].name}}</div></td>
+                        <td><div>{{user[0].password}}</div></td>
                         <td>
                             <div class="button_container">
                                 <form action="/Delete" method="post" >
-                                    <input name="id" type="hidden" value="{{ user.id }}">
+                                    <input name="id" type="hidden" value="{{ user[0].id }}">
                                     <button type="submit" id="Delete">Delete</button>
                                 </form>
                                 <form action="/Edit" method="post" >
-                                    <input name="id" type="hidden" value="{{ user.id }}">
+                                    <input name="id" type="hidden" value="{{ user[0].id }}">
                                     <button type="submit" id="Edit">Edit</button>
                                 </form>
                                 
