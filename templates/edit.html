@@ -13,7 +13,8 @@
     <div class="container" >
         <form action="/Edit" method="post"> 
             <legend>Id</legend>    
-            <input name="id" type="number" value="{{ data.id }}" disabled><br>
+            <input name="id" type="hidden" value="{{ data.id }}" >
+            <input type="number" value="{{ data.id }}" disabled><br>
             <legend>Username</legend>    
             <input name ="new_username" type="text" value="{{ data.name }}" placeholder="Username" autocomplete="off" spellcheck="false"><br>
             <legend>Password</legend>

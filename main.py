@@ -22,7 +22,7 @@ def Table():
 
 @app.route("/Register", methods = ["GET","POST"])
 def register():
-    id       = 1
+    id       = flask.request.form.get("id")
     username = flask.request.form.get("username")
     password = flask.request.form.get("password") 
     
@@ -46,6 +46,7 @@ def edit():
     new_password = flask.request.form.get("new_password")
 
     user_data = f.Get_user_info(id)[0]
+    
     if user_data["name"] == new_username:
         if f.Valid_password(new_password):
             f.Edit(id,new_username,new_password)
